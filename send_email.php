@@ -17,6 +17,9 @@ try {
     $name = $data['name'] ?? '';
     $email = $data['email'] ?? '';
     $message = $data['message'] ?? '';
+    $businessName = $data['businessName'] ?? '';
+    $businessType = $data['businessType'] ?? '';
+    $phone = $data['phone'] ?? '';
     
     // Validate required fields
     if (empty($name) || empty($email)) {
@@ -36,15 +39,19 @@ try {
     $mail->Port = 587;
     
     // Recipients
-    $mail->setFrom('sajedul0101@gmail.com', 'Early Access Notification');
-    $mail->addAddress('sajedul0101@gmail.com');
+    $mail->setFrom('sajedul0101@gmail.com', 'NidusCart Early Access Notification');
+    $mail->addAddress('rd@niduslab.com');
+    $mail->addCC('info@niduslab.com');
     $mail->addReplyTo($email, $name);
     
     // Content
     $mail->isHTML(true);
-    $mail->Subject = 'Niduscart New Early Access Request';
-    $mail->Body = "<h2>New Early Access Request for Niduscart</h2>
-                   <p><strong>Name:</strong> {$name}</p>
+    $mail->Subject = 'Niduscart New Early Access Request (Vendor)';
+    $mail->Body = "<h2>New Early Access Request for Niduscart (Vendor)</h2>
+                   <p><strong>Business Name:</strong> {$businessName}</p>
+                   <p><strong>Business Type:</strong> {$businessType}</p>
+                   <p><strong>Contact Name:</strong> {$name}</p>
+                   <p><strong>Phone:</strong> {$phone}</p>
                    <p><strong>Email:</strong> {$email}</p>"
                    . (!empty($message) ? "<p><strong>Message:</strong> {$message}</p>" : '');
     

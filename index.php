@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niduscart - Coming Soon</title>
+    <title>NidusCart - Coming Soon</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
+            --primary-color: #F86120;
+            --secondary-color: #F86120;
             --accent-color: #f59e0b;
             --text-primary: #1f2937;
             --text-secondary: #4b5563;
             --background-light: #f3f4f6;
+        }
+
+        .bg-orange {
+            background-color:rgb(248, 161, 121);
+        }
+
+        .text-orange{
+            color: #F86120;
         }
 
         body {
@@ -46,7 +54,7 @@
         }
 
         .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,97,32,0.2));
             padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
@@ -66,7 +74,7 @@
         .countdown-timer {
             font-size: 2.5rem;
             font-weight: 700;
-            color: white;
+            color: #F86120;
         }
 
         .countdown-box {
@@ -104,16 +112,27 @@
 
         .contact-card {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
-        .form-control {
+        .form-control, .form-select {
             border: 2px solid #e5e7eb;
             border-radius: 8px;
             padding: 0.75rem 1rem;
+            height: calc(2.25rem + 14px);
             transition: all 0.3s ease;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
         }
 
         .form-control:focus {
@@ -159,7 +178,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="bi bi-bag-heart-fill me-2"></i>Niduscart
+                <img src="src/image/niduscart-logo.png" alt="Niduscart Logo" style="height: 40px;"> 
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -186,28 +205,28 @@
         <section class="text-center hero-section">
             <div class="container">
                 <div class="mb-4">
-                    <i class="text-white bi bi-shop display-1"></i>
+                    <i class="text-[#F86120] bi bi-shop display-1"></i>
                 </div>
-                <h1 class="mb-3 text-white display-4 fw-bold">The Future of Multi-Vendor <br>E-commerce is Here</h1>
-                <p class="mb-4 text-white opacity-90 lead">Join thousands of vendors and grow your business with Niduscart Marketplace</p>
+                <h1 class="mb-3 text-[#F86120] display-md-5 fw-bold">Bangladesh’s First AI-Integrated Multi-Vendor <br>E-commerce Platform Is Almost Here!</h1>
+                <p class="mb-4 text-[#F86120] opacity-90 lead">Join NidusCart and be among the first to redefine online retail!</p>
 
-                <div class="mb-5 countdown-timer" id="countdown">
+                <div class="mb-5 countdown-timer d-none d-md-block" id="countdown">
                     <div class="gap-4 d-flex justify-content-center">
                         <div class="countdown-box">
                             <div id="days" class="mb-2">00</div>
-                            <small class="text-white opacity-75">Days</small>
+                            <small class="text-[#F86120] opacity-75">Days</small>
                         </div>
                         <div class="countdown-box">
                             <div id="hours" class="mb-2">00</div>
-                            <small class="text-white opacity-75">Hours</small>
+                            <small class="text-[#F86120] opacity-75">Hours</small>
                         </div>
                         <div class="countdown-box">
                             <div id="minutes" class="mb-2">00</div>
-                            <small class="text-white opacity-75">Minutes</small>
+                            <small class="text-[#F86120] opacity-75">Minutes</small>
                         </div>
                         <div class="countdown-box">
                             <div id="seconds" class="mb-2">00</div>
-                            <small class="text-white opacity-75">Seconds</small>
+                            <small class="text-[#F86120] opacity-75">Seconds</small>
                         </div>
                     </div>
                 </div>
@@ -220,18 +239,51 @@
                 <div class="row g-4">
                     <div class="col-md-4">
                         <div class="feature-card">
-                            <i class="bi bi-shop feature-icon"></i>
-                            <h3 class="mb-3 h5">Easy Store Setup</h3>
-                            <p class="mb-0 text-secondary">Launch your online store in minutes with our intuitive vendor dashboard and powerful management tools.</p>
+                            <i class="bi bi-robot feature-icon"></i>
+                            <h3 class="mb-3 h5">AI-Powered Onboarding</h3>
+                            <p class="mb-0 text-secondary">Automated verification with AI document scanning and facial recognition for quick vendor setup.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="feature-card">
-                            <i class="bi bi-graph-up feature-icon"></i>
-                            <h3 class="mb-3 h5">Low Commission Rates</h3>
-                            <p class="mb-0 text-secondary">Enjoy competitive commission rates and maximize your profits with our seller-friendly pricing.</p>
+                            <i class="bi bi-bar-chart-line feature-icon"></i>
+                            <h3 class="mb-3 h5">Smart Inventory</h3>
+                            <p class="mb-0 text-secondary">AI-driven demand forecasting and automatic reordering to optimize your stock levels.</p>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="bi bi-tags feature-icon"></i>
+                            <h3 class="mb-3 h5">Dynamic Pricing</h3>
+                            <p class="mb-0 text-secondary">Real-time price adjustments based on demand, competition and inventory age.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 row g-4">
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="bi bi-box-seam feature-icon"></i>
+                            <h3 class="mb-3 h5">AR Product Previews</h3>
+                            <p class="mb-0 text-secondary">Immersive AR showcases for products with 3D models and 360° views.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="bi bi-graph-up-arrow feature-icon"></i>
+                            <h3 class="mb-3 h5">Advanced Analytics</h3>
+                            <p class="mb-0 text-secondary">Real-time insights into sales, customer demographics and market trends.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="bi bi-truck feature-icon"></i>
+                            <h3 class="mb-3 h5">Smart Logistics</h3>
+                            <p class="mb-0 text-secondary">AI-driven automation to optimize delivery routes and reduce shipping costs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 row g-4">
                     <div class="col-md-4">
                         <div class="feature-card">
                             <i class="bi bi-phone feature-icon"></i>
@@ -239,20 +291,11 @@
                             <p class="mb-0 text-secondary">Access millions of customers worldwide and grow your business with our marketplace platform.</p>
                         </div>
                     </div>
-                </div>
-                <div class="mt-4 row g-4">
                     <div class="col-md-4">
                         <div class="feature-card">
                             <i class="bi bi-shield-check feature-icon"></i>
                             <h3 class="mb-3 h5">Secure Payments</h3>
                             <p class="mb-0 text-secondary">Get paid securely and on time with our integrated payment system and automated settlements.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="feature-card">
-                            <i class="bi bi-truck feature-icon"></i>
-                            <h3 class="mb-3 h5">Flexible Shipping</h3>
-                            <p class="mb-0 text-secondary">Choose your preferred shipping methods and set your own delivery rates and policies.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -263,41 +306,158 @@
                         </div>
                     </div>
                 </div>
+                        
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="py-5 bg-white" id="contact">
-            <div class="container">
+        <section class="py-5 py-lg-6 bg-white position-relative overflow-hidden" id="contact">
+            <div class="container position-relative">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="contact-card">
+                    <div class="col-lg-10">
+                        <div class="contact-card shadow-lg rounded-4 overflow-hidden">
                             <div class="row g-0">
-                                <div class="p-4 text-white col-md-5 bg-primary d-flex flex-column justify-content-center">
-                                    <h2 class="mb-4 h3">Be the First to Know</h2>
-                                    <p class="mb-4">Join our exclusive early access list and get:</p>
-                                    <ul class="mb-0 list-unstyled">
-                                        <li class="mb-3"><i class="bi bi-check2-circle me-2"></i>Early bird discounts</li>
-                                        <li class="mb-3"><i class="bi bi-check2-circle me-2"></i>Premium features access</li>
-                                        <li class="mb-3"><i class="bi bi-check2-circle me-2"></i>Priority support</li>
+                                <div class="p-5 text-light col-md-5 bg-gradient d-flex flex-column justify-content-center" style="background-color: rgb(130 130 130);">
+                                    <h2 class="mb-4 display-6 fw-bold">Be the First to Know</h2>
+                                    <p class="mb-4 fs-5">Join our exclusive early access list and unlock:</p>
+                                    <ul class="mb-0 list-unstyled fs-6">
+                                        <li class="mb-3"><i class="bi bi-robot me-2"></i>Exclusive AI-powered vendor tools</li>
+                                        <li class="mb-3"><i class="bi bi-graph-up-arrow me-2"></i>Advanced analytics dashboard</li>
+                                        <li class="mb-3"><i class="bi bi-percent me-2"></i>Special commission rates</li>
+                                        <li class="mb-3"><i class="bi bi-stars me-2"></i>Featured placement on launch</li>
+                                        <li class="mb-3"><i class="bi bi-headset me-2"></i>Dedicated account manager</li>
+                                        <li class="mb-3"><i class="bi bi-lightning-charge me-2"></i>Early access to beta features</li>
+                                        <li class="mb-3"><i class="bi bi-person-check me-2"></i>Priority support queue</li>
+                                        <li class="mb-3"><i class="bi bi-file-earmark-text me-2"></i>Exclusive vendor resources</li>
+                                        <li class="mb-3"><i class="bi bi-gift me-2"></i>Launch day bonuses</li>
+                                        <li class="mb-3"><i class="bi bi-people me-2"></i>Invitation to vendor community</li>
                                     </ul>
                                 </div>
-                                <div class="p-4 col-md-7">
-                                    <h3 class="mb-4 h4">Get Early Access</h3>
-                                    <form id="contactForm">
-                                        <div class="mb-3">
-                                            <label for="name" class="form-label">Full Name</label>
-                                            <input type="text" class="form-control" id="name" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">Email Address</label>
-                                            <input type="email" class="form-control" id="email" required>
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="message" class="form-label">Your Message (Optional)</label>
-                                            <textarea class="form-control" id="message" rows="3"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary w-100">
-                                            <i class="bi bi-bell me-2"></i>Notify Me When We Launch
+                                <div class="p-5 col-md-7">
+                                    <h3 class="mb-3 display-8 fw-bold">Preregister Your Business Today</h3>
+                                    <form id="contactForm" class="needs-validation" novalidate>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const businessType = document.getElementById('businessType');
+    const otherBusinessTypeContainer = document.getElementById('otherBusinessTypeContainer');
+    
+    // Show/hide other business type field
+    businessType.addEventListener('change', function() {
+        otherBusinessTypeContainer.style.display = this.value === 'Other' ? 'block' : 'none';
+        if (this.value === 'Other') {
+            document.getElementById('otherBusinessType').setAttribute('required', 'required');
+        } else {
+            document.getElementById('otherBusinessType').removeAttribute('required');
+        }
+    });
+    
+    // Phone number validation
+    const phoneInput = document.getElementById('phone');
+    phoneInput.addEventListener('input', function() {
+        const phoneRegex = /^[0-9+\-\s]+$/;
+        if (!phoneRegex.test(this.value)) {
+            this.setCustomValidity('Please enter a valid phone number');
+        } else {
+            this.setCustomValidity('');
+        }
+    });
+    
+    // Form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (form.checkValidity()) {
+            // Form is valid, proceed with submission
+            alert('Form submitted successfully!');
+            form.reset();
+        } else {
+            // Form is invalid, show validation errors
+            e.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    }, false);
+});
+</script>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="businessName" class="form-label">Business Name</label>
+                                                    <input type="text" class="form-control" id="businessName" placeholder="Enter your business name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="businessType" class="form-label">Business Type</label>
+                                                    <select class="form-select" id="businessType" required>
+                                                        <option value="">Select business type</option>
+                                                        <option value="Fashion">Fashion</option>
+                                                        <option value="Electronics">Electronics</option>
+                                                        <option value="Home & Garden">Home & Garden</option>
+                                                        <option value="Beauty">Beauty</option>
+                                                        <option value="Sports">Sports</option>
+                                                        <option value="Grocery">Grocery</option>
+                                                        <option value="Pharmacy">Pharmacy</option>
+                                                        <option value="Books">Books</option>
+                                                        <option value="Toys">Toys</option>
+                                                        <option value="Jewelry">Jewelry</option>
+                                                        <option value="Automotive">Automotive</option>
+                                                        <option value="Furniture">Furniture</option>
+                                                        <option value="Pet Supplies">Pet Supplies</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6" id="otherBusinessTypeContainer" style="display: none;">
+                                                <div class="mb-3">
+                                                    <label for="otherBusinessType" class="form-label">Specify Business Type</label>
+                                                    <input type="text" class="form-control" id="otherBusinessType">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="name" class="form-label">Contact Person Name</label>
+                                                    <input type="text" class="form-control" id="name" placeholder="Your full name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="city" class="form-label">City</label>
+                                                    <select class="form-select" id="city" required>
+                                                        <option value="">Select your city</option>
+                                                        <option value="Dhaka">Dhaka</option>
+                                                        <option value="Chittagong">Chittagong</option>
+                                                        <option value="Khulna">Khulna</option>
+                                                        <option value="Rajshahi">Rajshahi</option>
+                                                        <option value="Sylhet">Sylhet</option>
+                                                        <option value="Barisal">Barisal</option>
+                                                        <option value="Rangpur">Rangpur</option>
+                                                        <option value="Mymensingh">Mymensingh</option>
+                                                        <option value="Comilla">Comilla</option>
+                                                        <option value="Narayanganj">Narayanganj</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="phone" class="form-label">Phone Number</label>
+                                                    <input type="tel" class="form-control" id="phone" placeholder="Phone number" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="email" class="form-label">Email Address</label>
+                                                    <input type="email" class="form-control" id="email" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mb-4">
+                                                    <label for="message" class="form-label">Short Message (Optional)</label>
+                                                    <textarea class="form-control" id="message" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        <button type="submit" class="btn btn-primary w-100 py-3 fs-6 fw-bold">
+                                            <i class="bi bi-bell-fill me-2"></i>Notify Me When We Launch
                                         </button>
                                     </form>
                                 </div>
@@ -314,7 +474,7 @@
                 <div class="row align-items-center">
                     <div class="mb-3 text-center col-md-4 text-md-start mb-md-0">
                         <a class="navbar-brand" href="#">
-                            <i class="bi bi-bag-heart-fill me-2"></i>Niduscart
+                            <img src="src/image/niduscart-logo.png" alt="Niduscart Logo" style="height: 40px;"> 
                         </a>
                     </div>
                     <div class="mb-3 text-center col-md-4 mb-md-0">
@@ -340,7 +500,7 @@
         })();
 
         // Set countdown date (30 days from now)
-        const countDownDate = new Date().getTime() + (90 * 24 * 60 * 60 * 1000);
+        const countDownDate = new Date().getTime() + (210 * 24 * 60 * 60 * 1000);
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -365,6 +525,16 @@
         // Update countdown every second
         const countdownInterval = setInterval(updateCountdown, 1000);
         updateCountdown();
+        
+        // Handle business type dropdown change
+        document.getElementById('businessType').addEventListener('change', function() {
+            const otherContainer = document.getElementById('otherBusinessTypeContainer');
+            if (this.value === 'Other') {
+                otherContainer.style.display = 'block';
+            } else {
+                otherContainer.style.display = 'none';
+            }
+        });
 
         // Form submission handling
         document.getElementById('contactForm').addEventListener('submit', async (e) => {
@@ -374,8 +544,15 @@
             submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Sending...';
             submitBtn.disabled = true;
 
+            const businessType = document.getElementById('businessType').value === 'Other' 
+                ? document.getElementById('otherBusinessType').value 
+                : document.getElementById('businessType').value;
+                
             const formData = {
+                businessName: document.getElementById('businessName').value,
+                businessType: businessType,
                 name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
                 email: document.getElementById('email').value,
                 message: document.getElementById('message').value
             };
