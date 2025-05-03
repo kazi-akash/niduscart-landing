@@ -499,8 +499,8 @@ document.addEventListener('DOMContentLoaded', function() {
             emailjs.init("YOUR_PUBLIC_KEY");
         })();
 
-        // Set countdown date (30 days from now)
-        const countDownDate = new Date().getTime() + (210 * 24 * 60 * 60 * 1000);
+        // Set countdown date to March 1st, 2026
+        const countDownDate = new Date('2026-03-01').getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
